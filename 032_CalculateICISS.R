@@ -1,6 +1,6 @@
 ---
 title:  "032_CalculateICISS.Rmd"
-authors: "Patrick McElduff, Bharat Vaikuntam, Lisa Sharwood"
+authors: "Patrick McElduff, Lisa Sharwood"
 date:   "17 January 2018"
 output: 
     html_document:
@@ -28,7 +28,7 @@ library(lubridate)
 
 ```{r read data sets, include= FALSE}
 
-# Import the file for those who meet the definition (without concussions)
+# Import the file for those who meet the definition (ISH admitted episodes)
 Incident_Episodes <- readRDS("Data\\Incident_Episodes.rds")
 APDC <- readRDS("Data\\APDC.rds")
 
@@ -39,7 +39,7 @@ diagnosis <- Incident_Episodes %>%
 # check <- diagnosis %>%
 #   filter(PPN %in% c("1219293", "442459", "3557143", "3955863"))
 
-ICISS_codes <- read_excel("Source\\Bharat\\TA_76_2_2013_12_22_GEDEBORG_13-01468_SDC7.xlsx") %>%
+ICISS_codes <- read_excel("Source\\Lisa\\TA_76_2_2013_12_22_GEDEBORG_13-01468_SDC7.xlsx") %>%
   select(icd10code, DSP)
 
 # code_list <- as.vector(ICISS_codes$icd10code)
